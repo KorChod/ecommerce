@@ -1,3 +1,5 @@
+http://127.0.0.1:8000/api/users/register/
+
 http://127.0.0.1:8000/api/products/
 http://127.0.0.1:8000/api/products/?limit=3&offset=2
 http://127.0.0.1:8000/api/products/?ordering=category
