@@ -38,6 +38,11 @@ class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
         fields = '__all__'
+    
+    def validate_price(self, value):
+        if value < 0:
+            raise serializers.ValidationError('Positive number required')
+        return value
 
 
 class ProductCreateSerializer(serializers.ModelSerializer):
@@ -55,7 +60,7 @@ class ProductCreateSerializer(serializers.ModelSerializer):
         return super().create(validated_data)
     
     def validate_price(self, value):
-        if value < 1:
+        if value < 0:
             raise serializers.ValidationError('Positive number required')
         return value
 
