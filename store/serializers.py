@@ -60,6 +60,12 @@ class OrderItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = OrderItem
         fields = ['product', 'quantity']
+    
+    def validate_quantity(self, value):
+        if value < 1:
+            raise serializers.ValidationError(
+                "Positive number required")
+        return value
 
 
 class OrderSerializer(serializers.Serializer):
