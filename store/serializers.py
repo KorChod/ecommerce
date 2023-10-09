@@ -53,6 +53,11 @@ class ProductCreateSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         validated_data['thumbnail'] = Product.create_thumbnail(validated_data['image'])
         return super().create(validated_data)
+    
+    def validate_price(self, value):
+        if value < 1:
+            raise serializers.ValidationError('Positive number required')
+        return value
 
 
 class OrderItemSerializer(serializers.ModelSerializer):
@@ -63,8 +68,7 @@ class OrderItemSerializer(serializers.ModelSerializer):
     
     def validate_quantity(self, value):
         if value < 1:
-            raise serializers.ValidationError(
-                "Positive number required")
+            raise serializers.ValidationError('Positive number required')
         return value
 
 
