@@ -144,6 +144,3 @@ REST_FRAMEWORK = {
 }
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-CRONJOBS = [
-    ('* * * * *', 'store.cronjobs.remind_payments'),
-]
