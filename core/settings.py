@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'store',
     'rest_framework',
     'django_filters',
+    'django_apscheduler',
 ]
 
 MIDDLEWARE = [
@@ -143,3 +144,6 @@ REST_FRAMEWORK = {
 }
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+CRONJOBS = [
+    ('* * * * *', 'store.cronjobs.remind_payments'),
+]
