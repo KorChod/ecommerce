@@ -90,15 +90,15 @@ To authenticate with basic authentication please include username and password i
 
 * Product details
   ```
-  GET /api/products/1/
+  GET /api/products/<id>/
   ```
   Update product
   ```
-  PUT /api/products/1/
+  PUT /api/products/<id>/
   ```
   Detele product
   ```
-  DELETE /api/products/1/
+  DELETE /api/products/<id>/
   ```
 
 * Create new order
