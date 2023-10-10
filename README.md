@@ -1,6 +1,7 @@
 # Key notes
 I recommend using browsable API for testing.
 I have enabled basic and session authentication for the views that require authorization.
+To authenticate with basic authentication please include username and password in each request.
 
 
 # Instructions
